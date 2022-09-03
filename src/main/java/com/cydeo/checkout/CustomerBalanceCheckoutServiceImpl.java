@@ -1,6 +1,7 @@
 package com.cydeo.checkout;
 
 import com.cydeo.Customer;
+import com.cydeo.StaticConstants;
 import com.cydeo.balance.Balance;
 import com.cydeo.balance.CustomerBalance;
 
