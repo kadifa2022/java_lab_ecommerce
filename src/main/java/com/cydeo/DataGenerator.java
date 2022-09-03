@@ -1,9 +1,15 @@
 package com.cydeo;
 
+import com.cydeo.balance.Balance;
+import com.cydeo.balance.CustomerBalance;
+import com.cydeo.balance.GiftCardBalance;
 import com.cydeo.category.Category;
 import com.cydeo.category.Electronic;
 import com.cydeo.category.Furniture;
 import com.cydeo.category.SkinCare;
+import com.cydeo.discount.AmountBasedDiscount;
+import com.cydeo.discount.Discount;
+import com.cydeo.discount.RateBasedDiscount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +50,29 @@ public class DataGenerator {
         Product product3 =
                 new Product(UUID.randomUUID(),"Chair", 30.87,87,85,StaticConstants.CATEGORY_LIST.get(1).getId());
         Product product4=new Product(UUID.randomUUID(),"Milk",2.87,185,85,UUID.randomUUID());
+        StaticConstants.PRODUCT_LIST.add(product1);
+        StaticConstants.PRODUCT_LIST.add(product2);
+        StaticConstants.PRODUCT_LIST.add(product3);
+        StaticConstants.PRODUCT_LIST.add(product4);
+
     }
+    public static void createBalance(){
+        Balance customerBalance= new CustomerBalance(StaticConstants.CUSTOMER_LIST.get(0).getId(),450.00);
+        Balance giftCardBalance=new GiftCardBalance(StaticConstants.CUSTOMER_LIST.get(1).getId(),500.00);
+        StaticConstants.COSTUMER_BALANCE_LIST.add(customerBalance);
+        StaticConstants.GIFT_CARD_BALANCE_LIST.add(giftCardBalance);
+
+    }
+    public static void createDiscount() {//check this one
+        Discount amountBasedDiscount = new AmountBasedDiscount(UUID.randomUUID(), "Buy 250 Free 50", 250.00);
+        Discount rateBasedDiscount=new RateBasedDiscount(UUID.randomUUID(),"Buy 500 free %15",500.00);
+   StaticConstants.DISCOUNT_LIST.add(amountBasedDiscount);
+   StaticConstants.DISCOUNT_LIST.add(rateBasedDiscount);
+
+    }
+
+
+
 
 
 
