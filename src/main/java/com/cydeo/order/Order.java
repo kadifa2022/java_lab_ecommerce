@@ -13,17 +13,17 @@ public class Order {
     private Double cartTotalAmount;
     private Double paidAmount;
     private Double discountAmount;
-    private UUID costumerId;
+    private UUID customerId;
     private String orderStatus;
     private Set<Product> productList;
 
-    public Order(UUID id, LocalDateTime orderDate, Double cartTotalAmount, Double paidAmount, Double discountAmount, UUID costumerId, String orderStatus, Set<Product> productList) {
+    public Order(UUID id, LocalDateTime orderDate, Double cartTotalAmount, Double paidAmount, Double discountAmount, UUID customerId, String orderStatus, Set<Product> productList) {
         this.id = id;
         this.orderDate = orderDate;
         this.cartTotalAmount = cartTotalAmount;
         this.paidAmount = paidAmount;
         this.discountAmount = discountAmount;
-        this.costumerId = costumerId;
+        this.customerId = customerId;
         this.orderStatus = orderStatus;
         this.productList = productList;
     }
@@ -68,12 +68,12 @@ public class Order {
         this.discountAmount = discountAmount;
     }
 
-    public UUID getCostumerId() {
-        return costumerId;
+    public UUID getCustomerId() {
+        return customerId;
     }
 
-    public void setCostumerId(UUID costumerId) {
-        this.costumerId = costumerId;
+    public void setCustomerId(UUID customerId) {
+        this.customerId = customerId;
     }
 
     public String getOrderStatus() {

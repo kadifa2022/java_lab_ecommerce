@@ -4,17 +4,17 @@ import java.util.UUID;
 
 public abstract class Balance {
 
-    private UUID costumerId;
+    private UUID customerId;
     private Double balance;
 
-    public Balance(UUID costumerId, Double balance) {
-        this.costumerId = costumerId;
+    public Balance(UUID customerId, Double balance) {
+        this.customerId = customerId;
         this.balance = balance;
     }
     public abstract Double addBalance(Double additionalBalance);
 
-    public UUID getCostumerId() {
-        return costumerId;
+    public UUID getCustomerId() {
+        return customerId;
     }
 
     public Double getBalance() {

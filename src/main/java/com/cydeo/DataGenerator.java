@@ -14,10 +14,12 @@ import com.cydeo.discount.RateBasedDiscount;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.Callable;
+
 
 public class DataGenerator {
-    public static void crateCategory(){
+    public static void createCustomer(){
+
+
         Address address1Customer1 = new Address("7925", "Jones Branch Dr" ,"Suite 3300","221102","VA" );
         Address address2Customer1 = new Address("825", "GeorgeTown Pky","Suite 5355","22361" , "VA" );
         Address address1Customer2= new Address("5924", "Lee Hwy", "House", "22044", "VA");
@@ -25,8 +27,9 @@ public class DataGenerator {
         List<Address>customer1AddressList=new ArrayList<>();
         customer1AddressList.add(address1Customer1);
         customer1AddressList.add(address2Customer1);
+
         Customer customer1 = new Customer(UUID.randomUUID(),"Ozzy","ozzy@cydeo.com",customer1AddressList);
-        Customer customer2 = new Customer(UUID.randomUUID(),"Mike", "mike@gmail.com");
+        Customer customer2 = new Customer(UUID.randomUUID(),"Mike", "mike@gmail.com",customer1AddressList);
 
         StaticConstants.CUSTOMER_LIST.add(customer1);
         StaticConstants.CUSTOMER_LIST.add(customer2);
@@ -59,7 +62,7 @@ public class DataGenerator {
     public static void createBalance(){
         Balance customerBalance= new CustomerBalance(StaticConstants.CUSTOMER_LIST.get(0).getId(),450.00);
         Balance giftCardBalance=new GiftCardBalance(StaticConstants.CUSTOMER_LIST.get(1).getId(),500.00);
-        StaticConstants.COSTUMER_BALANCE_LIST.add(customerBalance);
+        StaticConstants.CUSTOMER_BALANCE_LIST.add(customerBalance);
         StaticConstants.GIFT_CARD_BALANCE_LIST.add(giftCardBalance);
 
     }

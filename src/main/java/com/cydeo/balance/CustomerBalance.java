@@ -4,8 +4,9 @@ import java.util.UUID;
 
 public class CustomerBalance extends Balance{
 
-    public CustomerBalance(UUID costumerId, Double balance) {
-        super(costumerId, balance);
+
+    public CustomerBalance(UUID customerId, Double balance) {
+        super(customerId, balance);
     }
 
     @Override

@@ -21,7 +21,7 @@ public class CustomerBalanceCheckoutServiceImpl implements CheckoutService{
     }
     private static CustomerBalance findCustomerBalance(UUID customerId){
         for(Balance customerBalance: StaticConstants.CUSTOMER_BALANCE_LIST){
-            if(customerBalance.getCostumerId().toString().equals(customerId.toString())){
+            if(customerBalance.getCustomerId().toString().equals(customerId.toString())){
                 return (CustomerBalance) customerBalance;
             }
         }
